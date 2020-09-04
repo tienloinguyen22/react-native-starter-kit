@@ -5,12 +5,7 @@ module.exports = {
       require.resolve('babel-plugin-module-resolver'),
       {
         root: ['./src/'],
-        alias: {
-          '@app': './src',
-          '@core': './src/core',
-          '@weather': './src/modules/weather',
-          '@settings': './src/modules/settings',
-        },
+        alias: { '@app': './src' },
       },
     ],
   ],

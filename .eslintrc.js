@@ -24,11 +24,17 @@ module.exports = {
       { exceptMethods: ['componentDidCatch', 'componentDidAppear', 'componentDidDisappear'] },
     ],
     'import/no-unresolved': ['error', { ignore: ['@app', '@core', '@settings', '@weather'] }], // ignore module import
-    'max-len': ['error', 120], // change max length for a line to 120
+    'max-len': ['error', 250], // change max length for a line to 250
     'no-console': 'error', // don't allow console
     'no-param-reassign': ['error', { props: true, ignorePropertyModificationsFor: ['draft', 'draftState'] }], // no params reassigned except using immer
     'no-unused-expressions': ['error', { allowShortCircuit: true }], // don't use unused expressions except short circuit
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }], // don't use unused var except with _ prefix
+    'object-curly-newline': ['error', {
+      'ObjectExpression': { 'multiline': true, 'minProperties': 2 },
+      'ObjectPattern': { 'multiline': true },
+      'ImportDeclaration': { 'multiline': true },
+      'ExportDeclaration': { 'multiline': true }
+    }], 
     '@typescript-eslint/no-explicit-any': ['error'], // forbid to use 'any' type
     'react/jsx-closing-bracket-location': 'off', // let prettier formats the code
   },

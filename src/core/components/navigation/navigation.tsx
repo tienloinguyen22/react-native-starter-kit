@@ -1,8 +1,8 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {NavItem} from '@core/interfaces';
-import {Icon} from '../icon/icon';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavItem } from '@app/core/interfaces';
+import { Icon } from '../Icon/Icon';
 
 interface Props {
   navItems: NavItem[];
@@ -11,7 +11,8 @@ interface Props {
 const Tab = createBottomTabNavigator();
 
 export const Navigation = (props: Props): JSX.Element => {
-  const {navItems} = props;
+  const { navItems } = props;
+
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -19,7 +20,8 @@ export const Navigation = (props: Props): JSX.Element => {
           activeTintColor: 'tomato',
           inactiveTintColor: 'gray',
         }}
-        initialRouteName={navItems[0].name}>
+        initialRouteName={navItems[0].name}
+      >
         {navItems.map((navItem) => (
           <Tab.Screen
             key={navItem.name}
@@ -28,7 +30,7 @@ export const Navigation = (props: Props): JSX.Element => {
             options={{
               title: navItem.title,
               tabBarIcon: (iconProps) => {
-                const {focused, color, size} = iconProps;
+                const { focused, color, size } = iconProps;
                 return <Icon name={focused ? navItem.iconFocused : navItem.icon} size={size} color={color} />;
               },
             }}

@@ -1,5 +1,5 @@
-import {Text, SafeAreaView} from 'react-native';
+import { Text, SafeAreaView } from 'react-native';
 
-export {Text, SafeAreaView};
-export * from './icon/icon';
-export * from './navigation/navigation';
+export { Text, SafeAreaView };
+export * from './Icon/Icon';
+export * from './Navigation/Navigation';
