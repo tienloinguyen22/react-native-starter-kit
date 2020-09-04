@@ -8,8 +8,8 @@ import {
   ListRenderItemInfo,
   ImageSourcePropType,
   Animated,
-  Text,
 } from 'react-native';
+import { Text } from 'react-native-elements';
 import { welcome1, welcome2, welcome3, welcome4 } from '@app/assets';
 import { styles } from './WelcomeScreenStyles';
 

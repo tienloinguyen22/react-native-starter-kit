@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { theme } from '../../../../core/theme';
 
 export const styles = StyleSheet.create({
   flexOne: { flex: 1 },
@@ -25,38 +26,9 @@ export const styles = StyleSheet.create({
     height: 6,
     borderRadius: 3,
     marginHorizontal: 4,
-    backgroundColor: '#ffffff',
+    backgroundColor: theme.colors.white,
   },
-  leftButtonContainer: {
-    position: 'absolute',
-    left: 0,
-  },
-  rightButtonContainer: {
-    position: 'absolute',
-    right: 0,
-  },
-  bottomButton: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  transparentBottomButton: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  buttonText: {
-    color: 'white',
-    fontSize: 18,
-    padding: 12,
-  },
-  introSlide: { flex: 1 },
   background: {
-    flex: 1,
-    height: '100%',
-    width: '100%',
-  },
-  img: {
     flex: 1,
     height: '100%',
     width: '100%',
@@ -66,13 +38,13 @@ export const styles = StyleSheet.create({
     fontWeight: '900',
     lineHeight: 48,
     textAlign: 'center',
-    color: '#ffffff',
+    color: theme.colors.white,
   },
   slideDescription: {
     fontSize: 16,
     lineHeight: 24,
     textAlign: 'center',
-    color: '#ffffff',
+    color: theme.colors.white,
   },
   slideInfo: {
     position: 'absolute',
