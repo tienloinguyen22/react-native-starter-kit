@@ -4,9 +4,9 @@ import React from 'react';
 // import { WeatherScreen } from '@app/modules/weather/screens';
 // import { SettingsScreen } from '@app/modules/settings/screens';
 import { ThemeProvider } from 'react-native-elements';
-import { WelcomeScreen } from './modules/auth/screens';
 import { initializeI18Next } from './i18n';
 import { theme } from './core/theme';
+import { SplashScreen } from './modules/auth/screens/SplashScreen/SplashScreen';
 
 // const navItems: NavItem[] = [
 //   {
@@ -30,7 +30,7 @@ initializeI18Next();
 export const App = (): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>
-      <WelcomeScreen />
+      <SplashScreen />
     </ThemeProvider>
   );
 };

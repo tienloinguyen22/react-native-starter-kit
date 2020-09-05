@@ -10,7 +10,6 @@ export * from './Card/Card';
 export * from './CheckBox/CheckBox';
 export * from './Divider/Divider';
 export * from './Header/Header';
-export * from './Image/Image';
 export * from './Input/Input';
 export * from './ListItem/ListItem';
 export * from './Overlay/Overlay';
