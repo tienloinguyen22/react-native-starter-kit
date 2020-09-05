@@ -1,1 +1,6 @@
-export const en = { welcome: { petHotel: 'Pet hotel' } };
+export const en = {
+  welcome: {
+    skip: 'Skip',
+    getStarted: `Let's get started`,
+  },
+};

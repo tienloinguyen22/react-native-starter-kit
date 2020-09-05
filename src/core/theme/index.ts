@@ -4,6 +4,6 @@ export const theme = {
   colors: {
     ...colors,
     white: '#ffffff',
+    primary: '#06b4e5',
   },
-  Text: { style: { fontFamily: 'Nunito' } },
 };

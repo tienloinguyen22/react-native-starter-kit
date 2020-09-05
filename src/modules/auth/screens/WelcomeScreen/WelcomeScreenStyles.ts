@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   paginationContainer: {
     position: 'absolute',
-    bottom: 112,
+    bottom: 90,
     left: 16,
     right: 16,
     justifyContent: 'center',
@@ -53,4 +53,22 @@ export const styles = StyleSheet.create({
     right: 16,
     justifyContent: 'center',
   },
+  skipButtonContainer: {
+    position: 'absolute',
+    top: 24,
+    right: 24,
+  },
+  skipButtonText: {
+    fontSize: 14,
+    color: theme.colors.white,
+    textDecorationLine: 'underline',
+  },
+  getStartedButtonContainer: {
+    position: 'absolute',
+    bottom: 44,
+    left: 16,
+    right: 16,
+  },
+  getStartedButton: { backgroundColor: theme.colors.white },
+  getStartedTitle: { color: theme.colors.primary },
 });

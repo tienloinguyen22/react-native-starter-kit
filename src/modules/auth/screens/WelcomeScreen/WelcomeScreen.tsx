@@ -9,8 +9,9 @@ import {
   ImageSourcePropType,
   Animated,
 } from 'react-native';
-import { Text } from 'react-native-elements';
 import { welcome1, welcome2, welcome3, welcome4 } from '@app/assets';
+import { useTranslation } from 'react-i18next';
+import { Button, Text } from '@app/core/components';
 import { styles } from './WelcomeScreenStyles';
 
 interface IntroSlide {
@@ -48,6 +49,7 @@ const slides = [
 ];
 
 export const WelcomeScreen = (): JSX.Element => {
+  const { t } = useTranslation();
   const flatList = useRef<FlatList>();
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [width, setWidth] = useState<number>(0);
@@ -56,8 +58,20 @@ export const WelcomeScreen = (): JSX.Element => {
     slides.map((_, i) => (i === activeIndex ? new Animated.Value(18) : new Animated.Value(6))),
   );
 
+  const goToSlide = (pageNum: number): void => {
+    animatedValue[activeIndex].setValue(6);
+    setActiveIndex(pageNum);
+    if (flatList && flatList.current) {
+      flatList.current.scrollToOffset({
+        offset: pageNum * width,
+        animated: true,
+      });
+    }
+  };
+
   const renderItem = (listRenderItemInfo: ListRenderItemInfo<IntroSlide>): JSX.Element => {
-    const { item } = listRenderItemInfo;
+    const { item, index } = listRenderItemInfo;
+
     const itemStyles = {
       width,
       flex: 1,
@@ -65,6 +79,16 @@ export const WelcomeScreen = (): JSX.Element => {
     return (
       <View style={itemStyles}>
         <ImageBackground source={item.image} style={styles.background}>
+          {index !== slides.length - 1 && (
+            <View style={styles.skipButtonContainer}>
+              <Button
+                title={t('welcome.skip')}
+                type='clear'
+                titleStyle={styles.skipButtonText}
+                onPress={() => goToSlide(slides.length - 1)}
+              />
+            </View>
+          )}
           <View style={styles.slideInfo}>
             <View>
               <Text style={styles.slideTitle}>{item.title}</Text>
@@ -73,14 +97,20 @@ export const WelcomeScreen = (): JSX.Element => {
               <Text style={styles.slideDescription}>{item.description}</Text>
             </View>
           </View>
+          {index === slides.length - 1 && (
+            <Button
+              title={t('welcome.getStarted')}
+              containerStyle={styles.getStartedButtonContainer}
+              buttonStyle={styles.getStartedButton}
+              titleStyle={styles.getStartedTitle}
+            />
+          )}
         </ImageBackground>
       </View>
     );
   };
 
   const renderPagination = (): JSX.Element => {
-    // const isLastSlide = activeIndex === slides.length - 1;
-
     return (
       <View style={styles.paginationContainer}>
         <View>
