@@ -1,8 +1,11 @@
 {
   "dependencies": {
+    "@react-native-community/async-storage": "^1.12.0",
     "@react-native-community/masked-view": "^0.1.8",
     "@react-navigation/bottom-tabs": "^5.2.6",
     "@react-navigation/native": "^5.1.5",
+    "@rematch/core": "^1.4.0",
+    "@rematch/persist": "^1.1.6",
     "i18next": "^19.7.0",
     "lodash": "^4.17.20",
     "react": "^16.13.1",
@@ -14,7 +17,9 @@
     "react-native-reanimated": "^1.8.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.4.0",
-    "react-native-vector-icons": "^7.0.0"
+    "react-native-vector-icons": "^7.0.0",
+    "react-redux": "^7.2.1",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -26,6 +31,7 @@
     "@types/react-native-elements": "^0.18.0",
     "@types/react-native-linear-gradient": "^2.4.0",
     "@types/react-native-vector-icons": "^6.4.5",
+    "@types/react-redux": "^7.1.9",
     "@types/react-test-renderer": "16.9.2",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
