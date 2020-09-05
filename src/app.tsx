@@ -1,41 +1,50 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from 'react-native-elements';
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import { initializeI18Next } from './i18n';
 import { theme } from './core/theme';
-import { SplashScreen } from './modules/auth/screens/SplashScreen/SplashScreen';
-import { RootState } from './store';
+import { RootState, store } from './store';
+import { WelcomeScreen } from './modules/auth/screens';
 
 initializeI18Next();
 
-interface RematchState {
-  currentUserId: string;
+interface PropsFromRematch {
+  isLogin: boolean;
 }
 
-export const BaseApp = (props: RematchState): JSX.Element => {
-  const { currentUserId } = props;
+const Root = (props: PropsFromRematch): JSX.Element => {
+  const { isLogin } = props;
   const [loading, setLoading] = useState<boolean>(true);
+
   useEffect(() => {
-    if (loading && currentUserId) {
+    if (loading && isLogin) {
       setLoading(false);
     }
-  }, [currentUserId, loading]);
+  }, [isLogin]);
 
   if (loading) {
     return (
       <ThemeProvider theme={theme}>
-        <SplashScreen />
+        <WelcomeScreen />
       </ThemeProvider>
     );
   }
 
   return (
     <ThemeProvider theme={theme}>
-      <SplashScreen />
+      <WelcomeScreen />
     </ThemeProvider>
   );
 };
 
-const mapStateToProps = (state: RootState): RematchState => ({ currentUserId: state.userProfile._id });
+const mapState = (state: RootState): PropsFromRematch => ({ isLogin: Boolean(state.userProfile._id) });
 
-export const App = connect(mapStateToProps)(BaseApp);
+const BaseApp = connect(mapState)(Root);
+
+export const App = (): JSX.Element => {
+  return (
+    <Provider store={store}>
+      <BaseApp />
+    </Provider>
+  );
+};

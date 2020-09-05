@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { theme } from '../../theme';
 
 export const styles = StyleSheet.create({
   containerStyle: {
@@ -8,5 +9,14 @@ export const styles = StyleSheet.create({
   titleStyle: {
     fontFamily: 'Nunito',
     fontWeight: 'bold',
+  },
+  secondaryButtonStyle: { backgroundColor: theme.colors.white },
+  secondaryTitleStyle: { color: theme.colors.primary },
+  primaryTitleStyle: { color: theme.colors.white },
+  clearTitleStyle: {
+    color: theme.colors.primary,
+    fontWeight: '400',
+    fontSize: 13,
+    textDecorationLine: 'underline',
   },
 });

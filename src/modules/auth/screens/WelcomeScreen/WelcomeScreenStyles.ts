@@ -61,7 +61,6 @@ export const styles = StyleSheet.create({
   skipButtonText: {
     fontSize: 14,
     color: theme.colors.white,
-    textDecorationLine: 'underline',
   },
   getStartedButtonContainer: {
     position: 'absolute',
@@ -69,6 +68,4 @@ export const styles = StyleSheet.create({
     left: 16,
     right: 16,
   },
-  getStartedButton: { backgroundColor: theme.colors.white },
-  getStartedTitle: { color: theme.colors.primary },
 });

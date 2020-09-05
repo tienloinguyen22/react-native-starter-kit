@@ -100,9 +100,8 @@ export const WelcomeScreen = (): JSX.Element => {
           {index === slides.length - 1 && (
             <Button
               title={t('welcome.getStarted')}
+              type='secondary'
               containerStyle={styles.getStartedButtonContainer}
-              buttonStyle={styles.getStartedButton}
-              titleStyle={styles.getStartedTitle}
             />
           )}
         </ImageBackground>
