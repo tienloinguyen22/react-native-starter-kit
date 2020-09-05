@@ -37,6 +37,7 @@ module.exports = {
     }],
     'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
+    'no-underscore-dangle': 'off',
     '@typescript-eslint/no-explicit-any': ['error'], // forbid to use 'any' type
     'react/jsx-closing-bracket-location': 'off', // let prettier formats the code
   },
